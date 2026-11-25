@@ -119,10 +119,10 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 
 /* ---- Ajustes responsive ---- */
 @media (max-width:900px){
-  .stagetext{bottom:118px !important}
+  .stagetext{bottom:40px !important}
   .stagetext h1,.stagetext h2{font-size:clamp(34px,10.4vw,72px) !important;max-width:none !important}
   .stagetext p{font-size:clamp(15px,4.2vw,20px) !important;margin-top:18px !important}
-  .steps{left:clamp(24px,5vw,72px) !important;right:clamp(24px,5vw,72px) !important;bottom:28px !important;width:auto !important;gap:14px !important;flex-direction:row !important}
+  .steps{left:clamp(24px,5vw,72px) !important;right:clamp(24px,5vw,72px) !important;top:22px !important;bottom:auto !important;width:auto !important;gap:14px !important;flex-direction:row !important}
   .steps li{flex:1 1 0;min-width:0}
   .steps button{width:100% !important;font-size:10px !important;letter-spacing:.1em !important}
   .steps .row{gap:6px !important;white-space:nowrap}
@@ -134,10 +134,10 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 }
 @media (max-height:520px) and (orientation:landscape){
   header,header .wrap{height:64px !important}
-  .stagetext{bottom:84px !important}
+  .stagetext{bottom:22px !important}
   .stagetext h1,.stagetext h2{font-size:clamp(28px,5.2vw,48px) !important}
   .stagetext p{display:none}
-  .steps{bottom:18px !important}
+  .steps{top:10px !important;bottom:auto !important}
 }
 </style>
 </head>
@@ -518,7 +518,7 @@ class Component extends DCLogic {
     ctx.clearRect(0, 0, W, H);
     var wide = W / dpr > 900;
     var cx = W * (wide ? 0.64 : 0.5);
-    var cy = H * (wide ? 0.47 : 0.36);
+    var cy = H * (wide ? 0.47 : 0.4);
     var base = Math.min(W * (wide ? 0.6 : 1.05), H);
     var scale = base * (1.08 * wB + 0.82 * wW + 0.9 * wT);
     // cámara: mundo y decisión giran; el cerebro se muestra de perfil, oscilando
