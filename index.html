@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estratego — Estrategia en agronegocios</title>
+<meta name="description" content="Estrategia y gestión aplicada al agro. Gestión estratégica de empresas y cadenas de valor: proyectos de asesoría, management e inversión.">
+<link rel="canonical" href="https://www.estratego.uy/">
+<meta name="theme-color" content="#0B0F0C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Estratego — Estrategia en agronegocios">
+<meta property="og:description" content="Gestión estratégica de empresas y cadenas de valor.">
+<meta property="og:url" content="https://www.estratego.uy/">
+<meta property="og:locale" content="es_UY">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0F0C'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23C9A55C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0F0C}
+a{color:inherit}a:hover{color:#C9A55C}
+.es{font-family:'Instrument Sans',system-ui,sans-serif;color:#F1EEE6;background:#0B0F0C;-webkit-font-smoothing:antialiased}
+.es *{box-sizing:border-box}
+.es section{scroll-margin-top:88px}
+.serif{font-family:'Newsreader',Georgia,serif;font-optical-sizing:auto}
+.label{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+.navlink{font-size:14px;text-decoration:none;padding:12px 2px;color:#F1EEE6;background:linear-gradient(currentColor,currentColor) left calc(100% - 8px)/0 1px no-repeat;transition:background-size .5s cubic-bezier(.2,.7,.2,1)}
+.navlink:hover{color:#F1EEE6;background-size:100% 1px}
+.cta{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:0 28px;border:1px solid rgba(241,238,230,.45);text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.02em;transition:background .4s,color .4s,border-color .4s}
+.cta:hover{background:#F1EEE6;color:#0B0F0C;border-color:#F1EEE6}
+.cta svg{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cta:hover svg{transform:translateX(5px)}
+.stagetext{position:absolute;left:0;right:0;will-change:opacity,transform}
+.scrollhint{position:absolute;left:50%;bottom:28px;width:1px;height:56px;background:rgba(241,238,230,.18);overflow:hidden}
+.scrollhint::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#F1EEE6;animation:drop 2.2s cubic-bezier(.6,0,.3,1) infinite}
+.area{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,64px);padding:clamp(40px,5vw,72px) clamp(16px,2vw,32px);margin:0 calc(-1 * clamp(16px,2vw,32px));align-items:start;border-top:1px solid #0B0F0C;transition:background .55s cubic-bezier(.2,.7,.2,1),color .55s}
+.area:hover{background:#0B0F0C;color:#F1EEE6}
+.area:hover .muted{color:#B7BBB3}
+.area:hover .num{color:#C9A55C}
+.area h3{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.area:hover h3{transform:translateX(12px)}
+.muted{color:#3A403B;transition:color .55s}
+.chains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px;margin:28px 0 0;padding:0;list-style:none}
+.chains li{font-size:15px;padding-top:10px;border-top:1px solid currentColor;border-top-color:rgba(127,127,127,.35)}
+.g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,80px)}
+.mail{text-decoration:none;background:linear-gradient(#C9A55C,#C9A55C) left 94%/100% 1px no-repeat;transition:background-size .8s cubic-bezier(.2,.7,.2,1),color .4s}
+.mail:hover{color:#C9A55C;background-size:0 1px}
+.steps{position:absolute;right:clamp(24px,5vw,72px);bottom:14%;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;width:200px}
+.steps button{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:10px;width:100%;min-height:44px;padding:8px 0;font:500 12px/1 'Instrument Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6E756F;transition:color .5s}
+.steps button:hover{color:#B7BBB3}
+.steps button:focus-visible{outline:1px solid #C9A55C;outline-offset:4px}
+.steps .row{display:flex;align-items:baseline;gap:12px}
+.steps .row span{font-family:'Newsreader',Georgia,serif;font-size:15px;letter-spacing:0;transition:color .5s}
+.steps .bar{position:relative;height:1px;background:#262D28;overflow:hidden}
+.steps .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#C9A55C}
+.steps button.on{color:#F1EEE6}
+.steps button.on .row span{color:#C9A55C}
+@media (max-width:900px){.steps{left:clamp(24px,5vw,72px);right:auto;bottom:5%;flex-direction:row;gap:16px;width:auto}.steps button{width:96px;font-size:10px}}
+
+.atabs{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;max-width:260px}
+.atabs button{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:12px;width:100%;min-height:44px;padding:10px 0;font:500 13px/1 'Instrument Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6E756F;transition:color .5s}
+.atabs button:hover{color:#B7BBB3}
+.atabs button:focus-visible{outline:1px solid #C9A55C;outline-offset:4px}
+.atabs .row{display:flex;align-items:baseline;gap:14px}
+.atabs .row span{font-family:'Newsreader',Georgia,serif;font-size:16px;letter-spacing:0;transition:color .5s}
+.atabs .bar{position:relative;height:1px;background:#262D28;overflow:hidden}
+.atabs .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#C9A55C}
+.atabs button.on{color:#F1EEE6}
+.atabs button.on .row span{color:#C9A55C}
+.apanels{display:grid}
+.apanel{grid-area:1 / 1;will-change:opacity,transform}
+.alist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:36px 0 0;padding:0;list-style:none}
+.alist li{font-size:16px;color:#D9D6CE;padding:14px 0;border-top:1px solid #262D28}
+@media (max-width:900px){.atabs{flex-direction:row;max-width:none;gap:16px}.atabs li{flex:1}.atabs button{font-size:11px}}
+@media (max-width:520px){.alist{grid-template-columns:minmax(0,1fr)}}
+@keyframes drop{to{top:100%}}
+@supports (animation-timeline: view()){
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+@keyframes rv{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+}
+@media (max-width:900px){
+.g2{grid-template-columns:minmax(0,1fr)}
+.area{grid-template-columns:minmax(0,1fr);gap:14px}
+.hide-sm{display:none}
+}
+@media (max-width:520px){.chains{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion: reduce){.es *,.es *::after{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class="es" style="width: 100%;">
+
+<!-- NAV fija -->
+<header style="position: sticky; top: 0; z-index: 50; height: 88px; color: #F1EEE6; background: rgba(11,15,12,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #1A201C;">
+<div class="wrap" style="height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+<a href="#inicio" style="text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .5em;">ESTRATEGO</a>
+<nav aria-label="Principal" style="display: flex; gap: clamp(20px, 3vw, 40px);">
+<a class="navlink" href="#areas">Áreas</a>
+<a class="navlink" href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO: estrategia (mundo) → información (cerebro) → decisión (neurona), cambio automático -->
+<section id="inicio" data-stage aria-roledescription="carrusel" aria-label="Estrategia, información y decisión" style="position: relative; height: 860px; background: #0B0F0C;">
+<div data-on-mousemove="onMove" data-on-mouseleave="onOut" style="position: relative; height: 100%; overflow: hidden;">
+<canvas data-ref="cv" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
+
+<div class="wrap" style="position: relative; height: 100%;">
+<!-- 01 Estrategia -->
+<div data-ref="a" class="stagetext" style="bottom: 14%; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
+<h1 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">ESTRATEGIA EN AGRONEGOCIOS</h1>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Gestión estratégica de empresas y cadenas de valor</p>
+</div>
+<!-- 02 Información -->
+<div data-ref="b" class="stagetext" style="bottom: 14%; opacity: 0; visibility: hidden; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
+<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">Análisis para la toma de decisiones</h2>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Insights accionables para los negocios</p>
+</div>
+<!-- 03 Decisión -->
+<div data-ref="c" class="stagetext" style="bottom: 14%; opacity: 0; visibility: hidden; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
+<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">Implementación de cambios</h2>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Proyectos de asesoría, management e inversión</p>
+</div>
+
+<!-- índice de etapas -->
+<ol class="steps" aria-label="Etapas" data-on-mouseenter="onEnter" data-on-mouseleave="onLeave">
+<li><button type="button" data-ref="s1" data-on-click="go0"><span class="row"><span>01</span>Estrategia</span><span class="bar"><i data-ref="f1"></i></span></button></li>
+<li><button type="button" data-ref="s2" data-on-click="go1"><span class="row"><span>02</span>Información</span><span class="bar"><i data-ref="f2"></i></span></button></li>
+<li><button type="button" data-ref="s3" data-on-click="go2"><span class="row"><span>03</span>Decisión</span><span class="bar"><i data-ref="f3"></i></span></button></li>
+</ol>
+</div>
+<div class="scrollhint" aria-hidden="true"></div>
+</div>
+</section>
+
+<!-- ÁREAS: solo texto, cambio automático -->
+<section id="areas" data-ref="sec2" aria-label="Áreas" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
+<div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(110px, 13vw, 190px);">
+<div class="g2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 40px;">
+<p class="label" style="margin: 0; color: #C9A55C;">Áreas</p>
+<ol class="atabs" data-on-mouseenter="onAEnter" data-on-mouseleave="onALeave">
+<li><button type="button" data-ref="a1" data-on-click="ago0"><span class="row"><span>01</span>Empresas</span><span class="bar"><i data-ref="af1"></i></span></button></li>
+<li><button type="button" data-ref="a2" data-on-click="ago1"><span class="row"><span>02</span>Cadenas</span><span class="bar"><i data-ref="af2"></i></span></button></li>
+<li><button type="button" data-ref="a3" data-on-click="ago2"><span class="row"><span>03</span>Gobiernos</span><span class="bar"><i data-ref="af3"></i></span></button></li>
+</ol>
+</div>
+<div class="apanels" aria-live="polite">
+<div class="apanel" data-ref="t1">
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Empresas</h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Experiencia en el trabajo con empresas ganaderas, agrícolas, forestales, de insumos agropecuarios y genética animal.</p>
+</div>
+<div class="apanel" data-ref="t2" style="opacity: 0; visibility: hidden;">
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Cadenas <em>de valor</em></h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Supply chain management para las cadenas:</p>
+<ul class="alist">
+<li>Cadena cárnica bovina</li><li>Agricultura de secano</li><li>Forestal</li><li>Otras cadenas cárnicas</li><li>Fruticultura</li><li>Insumos</li>
+</ul>
+</div>
+<div class="apanel" data-ref="t3" style="opacity: 0; visibility: hidden;">
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Gobiernos</h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Elaboración de planes de desarrollo sectoriales a solicitud de organismos multilaterales y gobiernos de América Latina.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACTO (misma grilla, escala y estilos que Áreas) -->
+<section id="contacto" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
+<div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: clamp(96px, 11vw, 160px);">
+<div class="g2" style="align-items: start;">
+<p class="label" style="margin: 0; color: #C9A55C;">Contacto</p>
+<div>
+<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em; max-width: 14ch;">Hablemos sobre el futuro de su organización.</h2>
+<a class="mail" href="mailto:info@estratego.uy" style="display: inline-block; margin-top: 32px; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #F1EEE6;">info@estratego.uy</a>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid #262D28;">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .5em;">ESTRATEGO</span>
+<span style="font-size: 13px; color: #9DA49D;">© 2026 · Estrategia en agronegocios</span>
+</div>
+</div>
+</section>
+
+</div>
+<script>
+// Adaptador: ejecuta el mismo componente del diseño sin el editor
+class DCLogic {
+  constructor(props) { this.props = props || {}; this.state = {}; }
+  setState(o) {
+    Object.assign(this.state, o);
+    var sec = document.querySelector('[data-stage]');
+    if (sec && this.state.stageH) sec.style.height = this.state.stageH + 'px';
+    if (this.componentDidUpdate) this.componentDidUpdate();
+  }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var self = this;
+    this.state = { stageH: 860 };
+    this._mx = 0; this._my = 0; this._aStage = 0; this._aEl = 0; this._aHold = 7; this._ato = [1, 0, 0];
+    var keep = function (k) { return function (el) { self[k] = el; }; };
+    this.refs_ = { cv: keep('_cv'), a: keep('_a'), b: keep('_b'), c: keep('_c'), s1: keep('_s1'), s2: keep('_s2'), s3: keep('_s3'), f1: keep('_f1'), f2: keep('_f2'), f3: keep('_f3'), sec2: keep('_sec2'), t1: keep('_t1'), t2: keep('_t2'), t3: keep('_t3'), a1: keep('_a1'), a2: keep('_a2'), a3: keep('_a3'), af1: keep('_af1'), af2: keep('_af2'), af3: keep('_af3') };
+    this._stage = 0; this._el = 0; this._cur = 1; this._prev = 1; this._mp = 1; this._dec = 0; this._to = [1, 0, 0]; this._hold = 7.5;
+  }
+
+  build(n) {
+    var rand = Math.random, TAU = Math.PI * 2, i, k;
+    var sm = function (x) { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+
+    // 1. El mundo y sus señales: continentes en trama de puntos (siluetas simplificadas)
+    var LAND = [
+      [[-168,66],[-162,70],[-140,70],[-125,72],[-95,72],[-80,73],[-62,66],[-55,52],[-66,45],[-70,42],[-76,35],[-81,31],[-80,25],[-84,30],[-90,29],[-97,26],[-97,21],[-92,18],[-87,21],[-83,15],[-77,8],[-80,9],[-86,13],[-92,15],[-105,20],[-110,24],[-114,30],[-118,34],[-124,40],[-124,48],[-133,56],[-150,60],[-158,58],[-165,62]],
+      [[-55,60],[-43,60],[-20,70],[-18,80],[-35,83],[-60,82],[-70,77],[-58,70]],
+      [[-80,9],[-72,12],[-62,11],[-50,2],[-35,-5],[-38,-13],[-40,-22],[-48,-26],[-53,-34],[-58,-38],[-65,-42],[-68,-50],[-72,-54],[-75,-50],[-73,-40],[-71,-30],[-70,-18],[-76,-14],[-81,-5],[-80,0],[-77,4]],
+      [[-10,36],[-9,43],[-2,44],[-5,48],[0,50],[5,53],[8,57],[5,62],[12,66],[18,70],[28,71],[40,67],[45,60],[40,48],[30,45],[28,41],[23,37],[20,40],[16,38],[12,44],[8,44],[3,42],[0,38],[-5,36]],
+      [[-6,50],[1,51],[2,53],[-2,57],[-5,59],[-6,56],[-5,53]],
+      [[-17,15],[-17,21],[-13,28],[-6,36],[10,37],[20,33],[32,31],[35,28],[43,12],[51,12],[50,2],[40,-5],[40,-15],[35,-24],[27,-34],[18,-34],[12,-18],[13,-6],[9,4],[-5,5],[-12,8]],
+      [[44,-25],[49,-15],[50,-12],[47,-25]],
+      [[28,41],[36,36],[35,32],[43,13],[52,16],[57,25],[62,25],[67,24],[73,20],[77,8],[80,13],[88,22],[92,22],[98,16],[100,8],[104,2],[106,10],[109,12],[106,21],[110,21],[118,24],[122,30],[121,38],[118,39],[126,38],[129,35],[130,42],[140,48],[142,54],[135,55],[150,60],[160,61],[163,58],[170,60],[180,65],[180,70],[160,70],[140,73],[110,77],[100,78],[80,73],[68,68],[60,70],[45,68],[40,67],[45,60],[40,48],[48,42],[52,40],[46,40],[40,41]],
+      [[130,31],[136,34],[141,38],[142,44],[145,44],[140,36],[135,33]],
+      [[95,5],[106,-6],[104,-6],[95,2]],
+      [[109,2],[117,7],[119,1],[116,-4],[110,-3]],
+      [[131,-1],[141,-3],[150,-10],[141,-9],[132,-4]],
+      [[114,-22],[114,-34],[118,-35],[123,-34],[131,-31],[138,-35],[141,-38],[147,-38],[150,-37],[153,-28],[153,-25],[146,-19],[142,-11],[136,-12],[131,-11],[126,-14],[122,-18]],
+      [[172,-34],[178,-38],[174,-42],[167,-46],[170,-45],[173,-40]]
+    ];
+    var inPoly = function (lon, lat, poly) {
+      var inside = false;
+      for (var a0 = 0, b0 = poly.length - 1; a0 < poly.length; b0 = a0++) {
+        var xi = poly[a0][0], yi = poly[a0][1], xj = poly[b0][0], yj = poly[b0][1];
+        if (((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi)) inside = !inside;
+      }
+      return inside;
+    };
+    var isLand = function (lon, lat) {
+      if (lat < -74) return true;
+      for (var pl = 0; pl < LAND.length; pl++) if (inPoly(lon, lat, LAND[pl])) return true;
+      return false;
+    };
+    var RG = 1.22, D2R = Math.PI / 180;
+    var toXYZ = function (lon, lat, rad) { var cl = Math.cos(lat * D2R); return [cl * Math.cos(lon * D2R) * rad, Math.sin(lat * D2R) * rad, cl * Math.sin(lon * D2R) * rad]; };
+    // mismo lenguaje que el cerebro: bandas sinuosas + relieve + bordes marcados
+    var bandAt = function (v) {
+      var F = 9 * v[0] + 7 * v[1] - 5 * v[2] + 1.8 * Math.sin(8 * v[1] + 3 * v[2]) + 1.2 * Math.sin(13 * v[0] * v[2] + 2);
+      return Math.abs(Math.sin(F));
+    };
+    var S = [], SF = [], landT = Math.round(n * 0.76), oceanT = Math.round(n * 0.12), lN = 0, oN = 0, guard = 0;
+    while ((lN < landT || oN < oceanT) && guard < n * 400) {
+      guard++;
+      var lo = rand() * 360 - 180, la = Math.asin(rand() * 2 - 1) / D2R;
+      var unit = toXYZ(lo, la, 1), band = bandAt(unit);
+      if (isLand(lo, la)) {
+        if (lN >= landT) continue;
+        var coast = !isLand(lo + 2.2, la) || !isLand(lo - 2.2, la) || !isLand(lo, la + 2.2) || !isLand(lo, la - 2.2);
+        if (!coast && band > 0.5 && rand() > 0.12) continue;
+        var rad = RG * (1 + 0.03 * (1 - band) + (coast ? 0.006 : 0));
+        S.push(toXYZ(lo, la, rad)); SF.push(rand() < 0.035 ? 2 : 0); lN++;
+      } else {
+        if (oN >= oceanT) continue;
+        // corrientes: líneas finas y sinuosas sobre el océano
+        var cur = Math.abs(Math.sin(5 * unit[1] + 2.2 * Math.sin(3 * unit[0] - 2 * unit[2])));
+        if (cur > 0.12 && rand() > 0.03) continue;
+        S.push(toXYZ(lo, la, RG * 0.995)); SF.push(1); oN++;
+      }
+    }
+    while (S.length < n) { var lo2 = rand() * 360 - 180, la2 = Math.asin(rand() * 2 - 1) / D2R; S.push(toXYZ(lo2, la2, RG * (1.25 + rand() * 0.9))); SF.push(3); }
+    // mezclar para que los "streams" y las señales queden repartidos
+    for (i = S.length - 1; i > 0; i--) { k = Math.floor(rand() * (i + 1)); var t0 = S[i]; S[i] = S[k]; S[k] = t0; var f0 = SF[i]; SF[i] = SF[k]; SF[k] = f0; }
+
+    // 2. Cerebro anatómico (z = adelante, y = arriba, x = lateral)
+    // perfil lateral en polares: ángulo desde el polo frontal
+    var ctrl = [[0, .98], [30, .96], [60, .86], [90, .75], [120, .78], [150, .9], [172, 1.0], [192, .9], [210, .66], [232, .52], [262, .56], [292, .62], [318, .52], [334, .5], [348, .78], [360, .98]];
+    var prof = function (deg) {
+      deg = ((deg % 360) + 360) % 360;
+      for (var c = 0; c < ctrl.length - 1; c++) {
+        if (deg <= ctrl[c + 1][0]) { var t = (deg - ctrl[c][0]) / (ctrl[c + 1][0] - ctrl[c][0]); t = (1 - Math.cos(t * Math.PI)) / 2; return ctrl[c][1] + (ctrl[c + 1][1] - ctrl[c][1]) * t; }
+      }
+      return ctrl[0][1];
+    };
+    // distancia a un segmento poligonal (para cisuras)
+    var dl = function (z, y, pts) {
+      var best = 9;
+      for (var q = 0; q < pts.length - 1; q++) {
+        var ax = pts[q][0], ay = pts[q][1], bx = pts[q + 1][0], by = pts[q + 1][1];
+        var vx = bx - ax, vy = by - ay, t = ((z - ax) * vx + (y - ay) * vy) / (vx * vx + vy * vy);
+        t = Math.max(0, Math.min(1, t));
+        var ex = ax + vx * t - z, ey = ay + vy * t - y, d = Math.sqrt(ex * ex + ey * ey);
+        if (d < best) best = d;
+      }
+      return best;
+    };
+    var sylvian = [[0.52, -0.22], [0.25, -0.1], [-0.05, 0.02], [-0.32, 0.14], [-0.42, 0.26]];
+    var central = [[-0.08, 0.76], [0.0, 0.5], [0.08, 0.28], [0.16, 0.06]];
+    var parieto = [[-0.62, 0.62], [-0.7, 0.42]];
+    var B = [], brainN = Math.round(n * 0.84), tries = 0, cy0 = 0.02;
+    while (B.length < brainN && tries < n * 200) {
+      tries++;
+      var z = rand() * 2 - 1, y = rand() * 1.8 - 0.9;
+      var ang = Math.atan2(y - cy0, z) * 180 / Math.PI, rr = Math.hypot(z, (y - cy0) / 0.86), lim = prof(ang);
+      if (rr > lim) continue;
+      var rho = rr / lim;
+      // cisuras: franjas vacías
+      if (dl(z, y, sylvian) < 0.035 || dl(z, y, central) < 0.022 || dl(z, y, parieto) < 0.02) continue;
+      // circunvoluciones: bandas sinuosas con orientación según el lóbulo
+      var frontal = z > 0.1 && y > -0.05;
+      var F = frontal ? (11 * y + 3 * z + 1.8 * Math.sin(9 * z + 2 * y)) : (11 * z - 6 * y + 1.8 * Math.sin(8 * y + 3 * z));
+      F += 1.2 * Math.sin(17 * z * y + 2);
+      var band = Math.abs(Math.sin(F));
+      if (band > 0.5 && rand() > 0.12) continue;
+      var side = rand() < 0.5 ? -1 : 1;
+      var dome = Math.sqrt(Math.max(0, 1 - Math.pow(rho, 2.4)));
+      var w = 0.62 * (1 - 0.1 * Math.max(0, z));
+      var x = side * (0.03 + w * dome);
+      x += side * 0.025 * (1 - band); // relieve de la circunvolución
+      B.push([x, y, z]);
+    }
+    // cerebelo con folias
+    var cb = Math.round(n * 0.1);
+    while (cb > 0) {
+      var u3 = rand() * 2 - 1, t3 = rand() * TAU, r3 = Math.sqrt(1 - u3 * u3);
+      var yy = -0.5 + u3 * 0.22, zz = -0.58 + r3 * Math.sin(t3) * 0.34;
+      if (Math.abs(Math.sin(yy * 46 + zz * 10)) > 0.55) continue;
+      B.push([r3 * Math.cos(t3) * 0.5, yy, zz]); cb--;
+    }
+    // tronco encefálico
+    while (B.length < n) {
+      var tt = rand(), a2 = rand() * TAU;
+      B.push([Math.cos(a2) * 0.11, -0.32 - tt * 0.62, -0.12 - tt * 0.2 + Math.sin(a2) * 0.11]);
+    }
+
+    // 3. Decisión: estructura ramificada desde el centro (como una neurona); una rama elegida
+    var SEG = [], roots = 7, golden = Math.PI * (3 - Math.sqrt(5)), pickRoot = 2;
+    var norm = function (v) { var l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; };
+    var grow = function (pos, dir, len, depth, chosen) {
+      var end = [pos[0] + dir[0] * len, pos[1] + dir[1] * len, pos[2] + dir[2] * len];
+      SEG.push({ a: pos, b: end, ch: chosen, d: depth });
+      if (depth >= 4) return;
+      var pick = Math.floor(rand() * 2);
+      for (var c = 0; c < 2; c++) {
+        var nd = norm([dir[0] + (rand() - 0.5) * 1.1, dir[1] + (rand() - 0.5) * 1.1, dir[2] + (rand() - 0.5) * 1.1]);
+        grow(end, nd, len * (0.7 + rand() * 0.08), depth + 1, chosen && c === pick);
+      }
+    };
+    for (var ro = 0; ro < roots; ro++) {
+      var yv = 1 - (ro + 0.5) / roots * 2, rv = Math.sqrt(1 - yv * yv), tv = golden * ro;
+      grow([0, 0, 0], [Math.cos(tv) * rv, yv * 0.8, Math.sin(tv) * rv], 0.4, 0, ro === pickRoot);
+    }
+    var C = [], tot = 0, si2;
+    for (si2 = 0; si2 < SEG.length; si2++) { var sg = SEG[si2]; sg.len = Math.hypot(sg.b[0] - sg.a[0], sg.b[1] - sg.a[1], sg.b[2] - sg.a[2]); tot += sg.len * (sg.ch ? 2.6 : 1); }
+    for (si2 = 0; si2 < SEG.length; si2++) {
+      var sg2 = SEG[si2], cnt = Math.max(3, Math.round(n * 0.88 * sg2.len * (sg2.ch ? 2.6 : 1) / tot));
+      for (var cq = 0; cq < cnt; cq++) {
+        var tq = (cq + rand()) / cnt, j3 = 0.012 * (1 - sg2.d / 5);
+        C.push([sg2.a[0] + (sg2.b[0] - sg2.a[0]) * tq + (rand() - 0.5) * j3, sg2.a[1] + (sg2.b[1] - sg2.a[1]) * tq + (rand() - 0.5) * j3, sg2.a[2] + (sg2.b[2] - sg2.a[2]) * tq + (rand() - 0.5) * j3, sg2.ch ? 1 : 0, sg2.d + tq]);
+      }
+    }
+    // núcleo: el resto de los puntos se condensa en el centro
+    while (C.length < n) {
+      var u4 = rand() * 2 - 1, t4 = rand() * TAU, r4 = Math.sqrt(1 - u4 * u4), rad = 0.13 * Math.cbrt(rand());
+      C.push([r4 * Math.cos(t4) * rad, u4 * rad, r4 * Math.sin(t4) * rad, 0, 0]);
+    }
+    var chosenSeg = SEG.filter(function (s0) { return s0.ch; }).sort(function (p0, p1) { return p0.d - p1.d; });
+
+    // ensamblar partículas
+    var perm = []; for (i = 0; i < n; i++) perm.push(i);
+    for (i = n - 1; i > 0; i--) { k = Math.floor(rand() * (i + 1)); var tmp = perm[i]; perm[i] = perm[k]; perm[k] = tmp; }
+    var P = [];
+    for (i = 0; i < n; i++) {
+      var cc = C[i];
+      P.push({ s: S[i], kind: SF[i], b: B[perm[i]], c: [cc[0], cc[1], cc[2]], sig: cc[3] === 1, dep: cc[4], d1: rand(), d2: rand(), stream: SF[i] === 0 && rand() < 0.08, off: rand() });
+    }
+    // conexiones neuronales sobre el cerebro
+    var L = [];
+    for (var a = 0; a < 1400 && L.length < 520; a++) {
+      var ia = Math.floor(rand() * n), best = -1, bd = 0.14;
+      for (var t = 0; t < 30; t++) {
+        var ib = Math.floor(rand() * n);
+        if (ib === ia) continue;
+        var A = P[ia].b, Bp = P[ib].b;
+        var dd = Math.hypot(A[0] - Bp[0], A[1] - Bp[1], A[2] - Bp[2]);
+        if (dd < bd && dd > 0.035) { bd = dd; best = ib; }
+      }
+      if (best >= 0) L.push([ia, best, rand(), 0.25 + rand() * 0.6]);
+    }
+    this._P = P; this._L = L; this._CH = chosenSeg;
+  }
+
+  componentDidMount() {
+    var self = this;
+    this._reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._resize = function () {
+      var h = Math.max(560, Math.min(window.innerHeight || 860, 1000));
+      if (h !== self.state.stageH) self.setState({ stageH: h });
+      var cv = self._cv; if (!cv) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = Math.round(cv.clientWidth * dpr); cv.height = Math.round(cv.clientHeight * dpr);
+      self._dpr = dpr;
+      var want = cv.clientWidth < 700 ? 1600 : 2800;
+      if (!self._P || self._P.length !== want) self.build(want);
+    };
+    this._resize();
+    window.addEventListener('resize', this._resize);
+    this._t0 = performance.now();
+    var loop = function () { self._raf = requestAnimationFrame(loop); self.frame(); self.frame3(); };
+    loop();
+  }
+  componentDidUpdate() { if (this._cv && this._cv.height !== Math.round(this._cv.clientHeight * (this._dpr || 1))) this._resize(); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); window.removeEventListener('resize', this._resize); }
+
+  show(el, o, dir) {
+    if (!el) return;
+    el.style.opacity = o;
+    el.style.transform = 'translateY(' + (dir * 36 * (1 - o)) + 'px)';
+    el.style.visibility = o < 0.01 ? 'hidden' : 'visible';
+  }
+
+  frame() {
+    var cv = this._cv, P = this._P; if (!cv || !P) return;
+    var ctx = cv.getContext('2d'), W = cv.width, H = cv.height, dpr = this._dpr || 1;
+    var now = performance.now();
+    var time = this._reduced ? 0 : (now - this._t0) / 1000;
+    var dt = Math.min(0.05, (now - (this._last || now)) / 1000); this._last = now;
+    var sm = function (x) { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+    var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var chase = function (v, t, rate) { return v < t ? Math.min(t, v + rate * dt) : Math.max(t, v - rate * dt); };
+    // avance automático
+    if (!this._paused) this._el += dt;
+    if (this._el >= this._hold) { this._stage = (this._stage + 1) % 3; this._el = 0; }
+    var st = this._stage;
+    // formas: 0 = cerebro (Estrategia), 1 = mundo (Información), 2 = árbol (Decisión)
+    // etapa → forma: 01 Estrategia = mundo, 02 Información = cerebro, 03 Decisión = neurona
+    var shapeT = [1, 0, 2][st];
+    if (shapeT !== this._cur) {
+      if (this._mp >= 0.5) this._prev = this._cur;
+      this._cur = shapeT; this._mp = this._prev === this._cur ? 1 : 0;
+    }
+    this._mp = chase(this._mp, 1, 1 / 2.6);
+    var mp = this._mp, prevS = this._prev, curS = this._cur;
+    var w = [0, 0, 0]; w[prevS] += 1 - mp; w[curS] += mp;
+    var wB = w[0], wW = w[1], wT = w[2];
+    this._dec = chase(this._dec, st === 2 && this._el > 2.6 ? 1 : 0, st === 2 ? 1 / 1.6 : 1.5);
+    var dec = this._dec;
+    // textos: el nuevo entra cuando el anterior salió
+    var T = [this._a, this._b, this._c], to = this._to, others;
+    for (var ti = 0; ti < 3; ti++) {
+      others = 0; for (var tj = 0; tj < 3; tj++) if (tj !== ti) others = Math.max(others, to[tj]);
+      to[ti] = chase(to[ti], (st === ti && others < 0.05) ? 1 : 0, 1 / 0.6);
+      this.show(T[ti], sm(to[ti]), st === ti ? 1 : -1);
+    }
+    var steps = [this._s1, this._s2, this._s3], fills = [this._f1, this._f2, this._f3];
+    for (var si = 0; si < 3; si++) {
+      if (steps[si]) { steps[si].className = si === st ? 'on' : ''; steps[si].setAttribute('aria-current', si === st ? 'step' : 'false'); }
+      if (fills[si]) fills[si].style.width = (si === st ? Math.min(100, this._el / this._hold * 100) : 0) + '%';
+    }
+
+    ctx.clearRect(0, 0, W, H);
+    var wide = W / dpr > 900;
+    var cx = W * (wide ? 0.64 : 0.5);
+    var cy = H * (wide ? 0.47 : 0.36);
+    var base = Math.min(W * (wide ? 0.6 : 1.05), H);
+    var scale = base * (1.08 * wB + 0.82 * wW + 0.9 * wT);
+    // cámara: mundo y decisión giran; el cerebro se muestra de perfil, oscilando
+    // el mundo arranca mostrando Sudamérica y oscila suavemente alrededor de ella
+    var spin = -0.52 + 0.5 * Math.sin(time * 0.11) + this._mx * 0.5;
+    var brainYaw = Math.PI / 2 + 0.55 * Math.sin(time * 0.22) + this._mx * 0.4;
+    var diff = Math.atan2(Math.sin(spin - brainYaw), Math.cos(spin - brainYaw));
+    var yaw = brainYaw + diff * (1 - wB);
+    var pitch = lerp(0.36, 0.06, wB) + this._my * 0.2;
+    var cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch), dist = 3.2;
+    var proj = function (x, y, z) {
+      var x1 = x * cyw - z * syw, z1 = x * syw + z * cyw;
+      var y2 = y * cp - z1 * sp, z2 = y * sp + z1 * cp;
+      var kk = (scale / 3.2) * dist / (dist + z2);
+      return [cx + x1 * kk, cy - y2 * kk, z2];
+    };
+    var n = P.length, X = this._X;
+    if (!X || X.length !== n * 3) X = this._X = new Float32Array(n * 3);
+    var streamW = wW;
+
+    for (var i = 0; i < n; i++) {
+      var p = P[i];
+      var sx = p.s[0] + 0.025 * Math.sin(time * 0.8 + p.d1 * 20), sy = p.s[1] + 0.025 * Math.cos(time * 0.7 + p.d2 * 20), sz = p.s[2];
+      if (p.kind !== 3) { sx = p.s[0]; sy = p.s[1]; }
+      if (p.stream && streamW > 0) {
+        var ph = (time * 0.12 + p.off) % 1, out = 1 + 0.55 * ph * streamW;
+        sx *= out; sy *= out; sz *= out;
+      }
+      var br = 0.012 * p.dep * Math.sin(time * 0.9 + p.dep * 1.7);
+      var shp = function (k) { return k === 0 ? p.b : k === 1 ? [sx, sy, sz] : [p.c[0] + br, p.c[1] + br, p.c[2]]; };
+      var e;
+      if (curS === 2) e = sm(mp * 1.7 - (p.dep / 5) * 0.7);          // el árbol crece del centro hacia afuera
+      else if (prevS === 2) e = sm(mp * 1.7 - (1 - p.dep / 5) * 0.7); // y se repliega desde las puntas
+      else e = sm(mp * 1.5 - p.d1 * 0.5);
+      var A0 = shp(prevS), B0 = shp(curS);
+      var x = lerp(A0[0], B0[0], e), y = lerp(A0[1], B0[1], e), z = lerp(A0[2], B0[2], e);
+      y += Math.sin(e * Math.PI) * 0.3 * (p.d2 - 0.5);
+      var q0 = proj(x, y, z);
+      X[i * 3] = q0[0]; X[i * 3 + 1] = q0[1]; X[i * 3 + 2] = q0[2];
+    }
+
+    // distorsión del cursor: lente que aparta los puntos y los arrastra con el movimiento
+    var cin = this._cin && !this._reduced;
+    var cxp = (this._cpx || 0) * dpr, cyp = (this._cpy || 0) * dpr;
+    if (this._lcx === undefined) { this._lcx = cxp; this._lcy = cyp; this._vx = 0; this._vy = 0; }
+    var ivx = dt > 0 ? (cxp - this._lcx) / Math.max(dt, 0.008) : 0, ivy = dt > 0 ? (cyp - this._lcy) / Math.max(dt, 0.008) : 0;
+    if (!cin) { ivx = 0; ivy = 0; }
+    this._vx += (ivx - this._vx) * 0.12; this._vy += (ivy - this._vy) * 0.12;
+    this._lcx = cxp; this._lcy = cyp;
+    this._lens = (this._lens || 0) + ((cin ? 1 : 0) - (this._lens || 0)) * 0.08;
+    var speed = Math.min(1, Math.hypot(this._vx, this._vy) / (1400 * dpr));
+    var lens = this._lens;
+    if (lens > 0.01) {
+      var RAD = (150 + 120 * speed) * dpr, R2 = RAD * RAD;
+      var push = (10 + 46 * speed) * dpr * lens;
+      var dragX = this._vx * 0.045 * lens, dragY = this._vy * 0.045 * lens;
+      for (var di = 0; di < n; di++) {
+        var ddx = X[di * 3] - cxp, ddy = X[di * 3 + 1] - cyp, dd2 = ddx * ddx + ddy * ddy;
+        if (dd2 > R2) continue;
+        var dd = Math.sqrt(dd2) || 1, fall = 1 - dd / RAD; fall *= fall;
+        var wave = 1 + 0.35 * Math.sin(dd / (14 * dpr) - time * 6) * speed;
+        X[di * 3] += (ddx / dd) * push * fall * wave + dragX * fall;
+        X[di * 3 + 1] += (ddy / dd) * push * fall * wave + dragY * fall;
+      }
+    }
+
+    // sinapsis del cerebro
+    if (wB > 0.01) {
+      var Ls = this._L;
+      ctx.lineWidth = dpr * 0.6;
+      ctx.strokeStyle = 'rgba(241,238,230,' + (0.08 * wB) + ')';
+      ctx.beginPath();
+      for (var q = 0; q < Ls.length; q++) { var A = Ls[q][0] * 3, B = Ls[q][1] * 3; ctx.moveTo(X[A], X[A + 1]); ctx.lineTo(X[B], X[B + 1]); }
+      ctx.stroke();
+    }
+    var pulse = function (ax, ay, bx, by, t, al) {
+      ctx.fillStyle = 'rgba(201,165,92,' + al + ')';
+      ctx.fillRect(ax + (bx - ax) * t - dpr * 1.3, ay + (by - ay) * t - dpr * 1.3, dpr * 2.6, dpr * 2.6);
+    };
+    if (wB > 0.01) {
+      for (var g = 0; g < this._L.length; g += 7) {
+        var Lg = this._L[g], tt = (time * Lg[3] + Lg[2]) % 1, A2 = Lg[0] * 3, B2 = Lg[1] * 3;
+        pulse(X[A2], X[A2 + 1], X[B2], X[B2 + 1], tt, wB);
+      }
+    }
+
+    // partículas
+    var treeW = sm((wT - 0.4) / 0.5);
+    for (var j = 0; j < n; j++) {
+      var pj = P[j], zz = X[j * 3 + 2];
+      var al = 0.18 + 0.82 * Math.min(1, Math.max(0, (1.4 - zz) / 2.6));
+      var sz2 = dpr * (0.8 + 0.9 * al);
+      if (pj.stream && streamW > 0.05) {
+        var ph2 = (time * 0.12 + pj.off) % 1;
+        ctx.fillStyle = 'rgba(201,165,92,' + (al * streamW * (1 - ph2)) + ')';
+      } else if (pj.kind === 2 && streamW > 0.05) {
+        var blink = Math.pow(0.5 + 0.5 * Math.sin(time * 2.2 + pj.off * 40), 6);
+        ctx.fillStyle = 'rgba(201,165,92,' + Math.min(1, al * (0.35 + 0.65 * blink) + 0.1) + ')';
+        sz2 *= 1 + 0.9 * blink * streamW;
+      } else if (pj.kind === 1 && streamW > 0.05) {
+        ctx.fillStyle = 'rgba(241,238,230,' + (al * lerp(0.9, 0.22, streamW)) + ')';
+      } else if (pj.sig && treeW > 0.3) {
+        ctx.fillStyle = 'rgba(201,165,92,' + Math.min(1, al * (0.6 + 0.4 * dec) + 0.25) + ')';
+      } else {
+        ctx.fillStyle = 'rgba(241,238,230,' + (al * lerp(0.9, 0.24, dec * treeW)) + ')';
+      }
+      ctx.fillRect(X[j * 3] - sz2 / 2, X[j * 3 + 1] - sz2 / 2, sz2, sz2);
+    }
+
+    // impulsos que recorren la rama elegida (mismo lenguaje que las sinapsis)
+    var CH = this._CH;
+    if (treeW > 0.01 && CH && CH.length) {
+      var Lc = CH.length;
+      for (var pk = 0; pk < 6; pk++) {
+        var uu = ((time * 0.3 + pk / 6) % 1) * Lc, k3 = Math.min(Lc - 1, Math.floor(uu)), fr = uu - k3, Cs = CH[k3];
+        var pa = proj(Cs.a[0], Cs.a[1], Cs.a[2]), pb = proj(Cs.b[0], Cs.b[1], Cs.b[2]);
+        pulse(pa[0], pa[1], pb[0], pb[1], fr, treeW);
+      }
+    }
+  }
+
+  frame3() {
+    if (!this._t1) return;
+    var now = performance.now(), dt = Math.min(0.05, (now - (this._last3 || now)) / 1000); this._last3 = now;
+    var visible = true;
+    if (this._sec2) { var r = this._sec2.getBoundingClientRect(), vh = window.innerHeight || 900; visible = r.top < vh * 0.45 && r.bottom > vh * 0.35; }
+    if (visible && !this._aPaused) this._aEl += dt;
+    if (this._aEl >= this._aHold) { this._aStage = (this._aStage + 1) % 3; this._aEl = 0; }
+    var st = this._aStage, to = this._ato, T = [this._t1, this._t2, this._t3];
+    var sm = function (x) { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+    for (var i = 0; i < 3; i++) {
+      var others = 0; for (var j = 0; j < 3; j++) if (j !== i) others = Math.max(others, to[j]);
+      var tgt = (st === i && others < 0.05) ? 1 : 0, rate = dt / 0.5;
+      to[i] = to[i] < tgt ? Math.min(tgt, to[i] + rate) : Math.max(tgt, to[i] - rate);
+      var o = sm(to[i]), el = T[i];
+      if (el) { el.style.opacity = o; el.style.transform = 'translateY(' + ((st === i ? 1 : -1) * 24 * (1 - o)) + 'px)'; el.style.visibility = o < 0.01 ? 'hidden' : 'visible'; }
+    }
+    var B = [this._a1, this._a2, this._a3], F = [this._af1, this._af2, this._af3];
+    for (var k = 0; k < 3; k++) {
+      if (B[k]) { B[k].className = k === st ? 'on' : ''; B[k].setAttribute('aria-pressed', k === st ? 'true' : 'false'); }
+      if (F[k]) F[k].style.width = (k === st ? Math.min(100, this._aEl / this._aHold * 100) : 0) + '%';
+    }
+  }
+
+  renderVals() {
+    var self = this, h = this.state.stageH || 860, R = this.refs_;
+    return {
+      stageH: h,
+      cvRef: R.cv, aRef: R.a, bRef: R.b, cRef: R.c, s1Ref: R.s1, s2Ref: R.s2, s3Ref: R.s3, f1Ref: R.f1, f2Ref: R.f2, f3Ref: R.f3,
+      sec2Ref: R.sec2, t1Ref: R.t1, t2Ref: R.t2, t3Ref: R.t3, a1Ref: R.a1, a2Ref: R.a2, a3Ref: R.a3, af1Ref: R.af1, af2Ref: R.af2, af3Ref: R.af3,
+      ago0: function () { self._aStage = 0; self._aEl = 0; },
+      ago1: function () { self._aStage = 1; self._aEl = 0; },
+      ago2: function () { self._aStage = 2; self._aEl = 0; },
+      onAEnter: function () { self._aPaused = true; },
+      onALeave: function () { self._aPaused = false; },
+      go0: function () { self._stage = 0; self._el = 0; },
+      go1: function () { self._stage = 1; self._el = 0; },
+      go2: function () { self._stage = 2; self._el = 0; },
+      onEnter: function () { self._paused = true; },
+      onLeave: function () { self._paused = false; },
+      onMove: function (e) {
+        var el = e.currentTarget; if (!el) return;
+        var b = el.getBoundingClientRect();
+        self._mx = (e.clientX - b.left) / b.width - 0.5;
+        self._my = (e.clientY - b.top) / b.height - 0.5;
+        self._cpx = e.clientX - b.left; self._cpy = e.clientY - b.top; self._cin = true;
+      },
+      onOut: function () { self._cin = false; }
+    };
+  }
+}
+(function () {
+  var c = new Component({});
+  var sec = document.querySelector('[data-stage]');
+  if (sec) sec.style.height = c.state.stageH + 'px';
+  document.querySelectorAll('[data-ref]').forEach(function (el) { var k = el.getAttribute('data-ref'); if (c.refs_[k]) c.refs_[k](el); });
+  var vals = c.renderVals();
+  ['mousemove', 'mouseleave', 'mouseenter', 'click'].forEach(function (ev) {
+    document.querySelectorAll('[data-on-' + ev + ']').forEach(function (el) {
+      var fn = vals[el.getAttribute('data-on-' + ev)];
+      if (fn) el.addEventListener(ev, fn);
+    });
+  });
+  c.componentDidMount();
+})();
+</script>
+</body>
+</html>
