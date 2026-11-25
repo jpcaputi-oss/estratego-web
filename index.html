@@ -115,7 +115,7 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 .clientes-btn{padding:0;width:40px;min-height:40px;justify-content:center}
 .clientes-btn .cli-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
-@media (max-width:420px){.atabs{gap:10px !important}.atabs li{flex:1 1 0 !important;min-width:0}.atabs button{font-size:10px !important;letter-spacing:.1em !important}.atabs .row{gap:6px !important}}
+@media (max-width:420px){.atabs{gap:10px !important}.atabs li{flex:1 1 0 !important;min-width:0}.atabs button{font-size:10px !important;letter-spacing:.1em !important}.atabs .row{gap:6px !important}.atabs .row span{display:none}html[lang="en"] .atabs button{letter-spacing:.06em !important}}
 
 /* ---- Ajustes responsive ---- */
 @media (max-width:900px){
@@ -139,6 +139,27 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
   .stagetext p{display:none}
   .steps{top:10px !important;bottom:auto !important}
 }
+
+.lang-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 2px;font-size:12px;font-weight:500;letter-spacing:.14em;color:#6E756F}
+.lang-btn [data-l]{transition:color .4s}
+.row .lbl{font-weight:inherit}
+.lang-btn .lang-sep{color:#3A423C}
+html[lang="es"] .lang-btn [data-l="es"],html[lang="en"] .lang-btn [data-l="en"]{color:#F1EEE6}
+.lang-btn:hover [data-l]{color:#B7BBB3}
+html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [data-l="en"]{color:#F1EEE6}
+.lang-btn:focus-visible{outline:1px solid #C9A55C;outline-offset:4px}
+@media (max-width:560px){
+  .lang-btn .lang-sep,html[lang="es"] .lang-btn [data-l="es"],html[lang="en"] .lang-btn [data-l="en"]{display:none}
+  .lang-btn [data-l]{color:#B7BBB3 !important}
+  header nav{gap:14px !important}
+  header .wrap{gap:12px !important}
+  header .wrap > a:first-child{letter-spacing:.24em !important}
+}
+@media (max-width:400px){
+  header nav{gap:12px !important}
+  header .wrap > a:first-child{letter-spacing:.16em !important;font-size:13px !important}
+  .navlink{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -148,41 +169,42 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 <header style="position: sticky; top: 0; z-index: 50; height: 88px; color: #F1EEE6; background: rgba(11,15,12,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #1A201C;">
 <div class="wrap" style="height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
 <a href="#inicio" style="text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .5em;">ESTRATEGO</a>
-<nav aria-label="Principal" style="display: flex; gap: clamp(20px, 3vw, 40px);">
-<a class="navlink" href="#areas">Áreas</a>
-<a class="navlink" href="#contacto">Contacto</a>
-<button type="button" class="clientes-btn" id="open-clientes" aria-haspopup="dialog" aria-label="Clientes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span class="cli-lbl">Clientes</span></button>
+<nav aria-label="Principal" data-i18n-aria="aria.nav" style="display: flex; gap: clamp(20px, 3vw, 40px);">
+<a class="navlink" href="#areas" data-i18n="nav.areas">Áreas</a>
+<a class="navlink" href="#contacto" data-i18n="nav.contact">Contacto</a>
+<button type="button" class="lang-btn" id="lang-toggle" aria-label="Read in English" lang="en"><span data-l="es">ES</span><span class="lang-sep" aria-hidden="true">/</span><span data-l="en">EN</span></button>
+<button type="button" class="clientes-btn" id="open-clientes" aria-haspopup="dialog" aria-label="Clientes" data-i18n-aria="nav.clients"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span class="cli-lbl" data-i18n="nav.clients">Clientes</span></button>
 </nav>
 </div>
 </header>
 
 <!-- HERO: estrategia (mundo) → información (cerebro) → decisión (neurona), cambio automático -->
-<section id="inicio" data-stage aria-roledescription="carrusel" aria-label="Estrategia, información y decisión" style="position: relative; height: 860px; background: #0B0F0C;">
+<section id="inicio" data-stage aria-roledescription="carrusel" aria-label="Estrategia, información y decisión" data-i18n-aria="aria.hero" data-i18n-ard="aria.carousel" style="position: relative; height: 860px; background: #0B0F0C;">
 <div data-on-mousemove="onMove" data-on-mouseleave="onOut" style="position: relative; height: 100%; overflow: hidden;">
 <canvas data-ref="cv" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
 
 <div class="wrap" style="position: relative; height: 100%;">
 <!-- 01 Estrategia -->
 <div data-ref="a" class="stagetext" style="bottom: 14%; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
-<h1 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">Estrategia en agronegocios</h1>
-<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Gestión estratégica de empresas y cadenas de valor</p>
+<h1 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;" data-i18n="h.t1">Estrategia en agronegocios</h1>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;" data-i18n="h.s1">Gestión estratégica de empresas y cadenas de valor</p>
 </div>
 <!-- 02 Información -->
 <div data-ref="b" class="stagetext" style="bottom: 14%; opacity: 0; visibility: hidden; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
-<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">Análisis para la toma de decisiones</h2>
-<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Insights accionables para los negocios</p>
+<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;" data-i18n="h.t2">Análisis para la toma de decisiones</h2>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;" data-i18n="h.s2">Insights accionables para los negocios</p>
 </div>
 <!-- 03 Decisión -->
 <div data-ref="c" class="stagetext" style="bottom: 14%; opacity: 0; visibility: hidden; padding: 0 clamp(24px, 5vw, 72px); margin: 0;">
-<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;">Implementación de cambios</h2>
-<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;">Proyectos de asesoría, management e inversión</p>
+<h2 class="serif" style="margin: 0; font-weight: 300; color: #F1EEE6; font-size: clamp(44px, 6.4vw, 104px); line-height: 1; letter-spacing: -.025em; max-width: 13ch;" data-i18n="h.t3">Implementación de cambios</h2>
+<p style="margin: 28px 0 0; font-size: clamp(18px, 1.7vw, 26px); line-height: 1.45; color: #C9A55C; max-width: 34ch;" data-i18n="h.s3">Proyectos de asesoría, management e inversión</p>
 </div>
 
 <!-- índice de etapas -->
-<ol class="steps" aria-label="Etapas" data-on-mouseenter="onEnter" data-on-mouseleave="onLeave">
-<li><button type="button" data-ref="s1" data-on-click="go0"><span class="row"><span>01</span>Estrategia</span><span class="bar"><i data-ref="f1"></i></span></button></li>
-<li><button type="button" data-ref="s2" data-on-click="go1"><span class="row"><span>02</span>Información</span><span class="bar"><i data-ref="f2"></i></span></button></li>
-<li><button type="button" data-ref="s3" data-on-click="go2"><span class="row"><span>03</span>Decisión</span><span class="bar"><i data-ref="f3"></i></span></button></li>
+<ol class="steps" aria-label="Etapas" data-i18n-aria="aria.steps" data-on-mouseenter="onEnter" data-on-mouseleave="onLeave">
+<li><button type="button" data-ref="s1" data-on-click="go0"><span class="row"><span>01</span><b class="lbl" data-i18n="st.1">Estrategia</b></span><span class="bar"><i data-ref="f1"></i></span></button></li>
+<li><button type="button" data-ref="s2" data-on-click="go1"><span class="row"><span>02</span><b class="lbl" data-i18n="st.2">Información</b></span><span class="bar"><i data-ref="f2"></i></span></button></li>
+<li><button type="button" data-ref="s3" data-on-click="go2"><span class="row"><span>03</span><b class="lbl" data-i18n="st.3">Decisión</b></span><span class="bar"><i data-ref="f3"></i></span></button></li>
 </ol>
 </div>
 <div class="scrollhint" aria-hidden="true"></div>
@@ -190,32 +212,32 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 </section>
 
 <!-- ÁREAS: solo texto, cambio automático -->
-<section id="areas" data-ref="sec2" aria-label="Áreas" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
+<section id="areas" data-ref="sec2" aria-label="Áreas" data-i18n-aria="nav.areas" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
 <div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(110px, 13vw, 190px);">
 <div class="g2" style="align-items: start;">
 <div style="display: flex; flex-direction: column; gap: 40px;">
-<p class="label" style="margin: 0; color: #C9A55C;">Áreas</p>
+<p class="label" style="margin: 0; color: #C9A55C;" data-i18n="nav.areas">Áreas</p>
 <ol class="atabs" data-on-mouseenter="onAEnter" data-on-mouseleave="onALeave">
-<li><button type="button" data-ref="a1" data-on-click="ago0"><span class="row"><span>01</span>Empresas</span><span class="bar"><i data-ref="af1"></i></span></button></li>
-<li><button type="button" data-ref="a2" data-on-click="ago1"><span class="row"><span>02</span>Cadenas</span><span class="bar"><i data-ref="af2"></i></span></button></li>
-<li><button type="button" data-ref="a3" data-on-click="ago2"><span class="row"><span>03</span>Gobiernos</span><span class="bar"><i data-ref="af3"></i></span></button></li>
+<li><button type="button" data-ref="a1" data-on-click="ago0"><span class="row"><span>01</span><b class="lbl" data-i18n="ar.1">Empresas</b></span><span class="bar"><i data-ref="af1"></i></span></button></li>
+<li><button type="button" data-ref="a2" data-on-click="ago1"><span class="row"><span>02</span><b class="lbl" data-i18n="ar.2">Cadenas</b></span><span class="bar"><i data-ref="af2"></i></span></button></li>
+<li><button type="button" data-ref="a3" data-on-click="ago2"><span class="row"><span>03</span><b class="lbl" data-i18n="ar.3">Gobiernos</b></span><span class="bar"><i data-ref="af3"></i></span></button></li>
 </ol>
 </div>
 <div class="apanels" aria-live="polite">
 <div class="apanel" data-ref="t1">
-<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Empresas</h3>
-<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Experiencia en el trabajo con empresas ganaderas, agrícolas, forestales, de insumos agropecuarios y genética animal.</p>
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;" data-i18n="ar.1">Empresas</h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;" data-i18n="ar.p1">Experiencia en el trabajo con empresas ganaderas, agrícolas, forestales, de insumos agropecuarios y genética animal.</p>
 </div>
 <div class="apanel" data-ref="t2" style="opacity: 0; visibility: hidden;">
-<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Cadenas <em>de valor</em></h3>
-<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Supply chain management para las cadenas:</p>
-<ul class="alist">
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;" data-i18n-html="ar.h2">Cadenas <em>de valor</em></h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;" data-i18n="ar.p2">Supply chain management para las cadenas:</p>
+<ul class="alist" data-i18n-html="ar.list">
 <li>Cadena cárnica bovina</li><li>Agricultura de secano</li><li>Forestal</li><li>Otras cadenas cárnicas</li><li>Fruticultura</li><li>Insumos</li>
 </ul>
 </div>
 <div class="apanel" data-ref="t3" style="opacity: 0; visibility: hidden;">
-<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;">Gobiernos</h3>
-<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;">Elaboración de planes de desarrollo sectoriales a solicitud de organismos multilaterales y gobiernos de América Latina.</p>
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;" data-i18n="ar.3">Gobiernos</h3>
+<p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;" data-i18n="ar.p3">Elaboración de planes de desarrollo sectoriales a solicitud de organismos multilaterales y gobiernos de América Latina.</p>
 </div>
 </div>
 </div>
@@ -226,15 +248,15 @@ header .wrap > a:first-child{letter-spacing:.32em !important}
 <section id="contacto" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
 <div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: clamp(96px, 11vw, 160px);">
 <div class="g2" style="align-items: start;">
-<p class="label" style="margin: 0; color: #C9A55C;">Contacto</p>
+<p class="label" style="margin: 0; color: #C9A55C;" data-i18n="nav.contact">Contacto</p>
 <div>
-<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em; max-width: 14ch;">Hablemos sobre el futuro de su organización.</h2>
+<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em; max-width: 14ch;" data-i18n="ct.h">Hablemos sobre el futuro de su organización.</h2>
 <a class="mail" href="mailto:info@estratego.uy" style="display: inline-block; margin-top: 32px; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #F1EEE6;">info@estratego.uy</a>
 </div>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid #262D28;">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .5em;">ESTRATEGO</span>
-<span style="font-size: 13px; color: #9DA49D;">© 2026 · Estrategia en agronegocios</span>
+<span style="font-size: 13px; color: #9DA49D;" data-i18n="ft">© 2026 · Estrategia en agronegocios</span>
 </div>
 </div>
 </section>
@@ -709,20 +731,20 @@ class Component extends DCLogic {
 <div class="cli-in">
 <div class="cli-top">
 <div>
-<p class="label" style="margin:0 0 14px;color:#C9A55C;">Clientes</p>
-<h2 id="cli-t" class="serif" style="margin:0;font-weight:300;font-size:40px;line-height:1;letter-spacing:-.02em;">Acceso para clientes</h2>
+<p class="label" style="margin:0 0 14px;color:#C9A55C;" data-i18n="nav.clients">Clientes</p>
+<h2 id="cli-t" class="serif" style="margin:0;font-weight:300;font-size:40px;line-height:1;letter-spacing:-.02em;" data-i18n="cl.h">Acceso para clientes</h2>
 </div>
-<button type="button" class="cli-x" id="close-clientes" aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<button type="button" class="cli-x" id="close-clientes" aria-label="Cerrar" data-i18n-aria="cl.close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
 </div>
 <form class="cli-f" id="cli-form" novalidate>
-<label>Usuario<input type="text" name="usuario" id="cli-user" autocomplete="off" spellcheck="false" required></label>
-<label>Contraseña<input type="password" name="clave" id="cli-pass" autocomplete="off" required></label>
-<button type="submit" class="cli-go" id="cli-go">Ingresar</button>
+<label><span data-i18n="cl.user">Usuario</span><input type="text" name="usuario" id="cli-user" autocomplete="off" spellcheck="false" required></label>
+<label><span data-i18n="cl.pass">Contraseña</span><input type="password" name="clave" id="cli-pass" autocomplete="off" required></label>
+<button type="submit" class="cli-go" id="cli-go" data-i18n="cl.go">Ingresar</button>
 <p class="cli-msg" id="cli-msg" role="status" aria-live="polite"></p>
 </form>
 <div class="cli-foot">
-<a href="mailto:info@estratego.uy?subject=Acceso%20clientes">¿Olvidaste tu contraseña?</a>
-<span>Acceso restringido</span>
+<a href="mailto:info@estratego.uy?subject=Acceso%20clientes" data-i18n="cl.forgot">¿Olvidaste tu contraseña?</a>
+<span data-i18n="cl.restr">Acceso restringido</span>
 </div>
 </div>
 </dialog>
@@ -741,15 +763,79 @@ class Component extends DCLogic {
   if (location.hash === '#clientes') open();
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!u.value.trim() || !p.value) { msg.textContent = 'Ingresá tu usuario y contraseña.'; return; }
-    go.disabled = true; go.innerHTML = '<span class="cli-spin" aria-hidden="true"></span>Verificando';
+    if (!u.value.trim() || !p.value) { msg.textContent = T('cl.empty'); return; }
+    go.disabled = true; go.innerHTML = '<span class="cli-spin" aria-hidden="true"></span>' + T('cl.verif');
     msg.textContent = '';
     setTimeout(function () {
       p.value = '';
-      go.disabled = false; go.textContent = 'Ingresar';
-      msg.innerHTML = 'No pudimos validar tus credenciales. Si sos cliente de Estratego y necesitás acceso, escribinos a <a href="mailto:info@estratego.uy" style="color:#F1EEE6">info@estratego.uy</a>.';
+      go.disabled = false; go.textContent = T('cl.go');
+      msg.innerHTML = T('cl.fail');
     }, 1400);
   });
+})();
+</script>
+<script>
+(function () {
+  var EN = {
+    'nav.areas': 'Areas', 'nav.contact': 'Contact', 'nav.clients': 'Clients',
+    'aria.nav': 'Main', 'aria.hero': 'Strategy, information and decision', 'aria.carousel': 'carousel', 'aria.steps': 'Stages',
+    'h.t1': 'Agribusiness strategy', 'h.s1': 'Strategic management of companies and value chains',
+    'h.t2': 'Analysis for decision-making', 'h.s2': 'Actionable insights for business',
+    'h.t3': 'Implementing change', 'h.s3': 'Advisory, management and investment projects',
+    'st.1': 'Strategy', 'st.2': 'Information', 'st.3': 'Decision',
+    'ar.1': 'Companies', 'ar.2': 'Chains', 'ar.3': 'Governments',
+    'ar.p1': 'Experience working with livestock, crop, forestry, agricultural input and animal genetics companies.',
+    'ar.h2': 'Value <em>chains</em>',
+    'ar.p2': 'Supply chain management for the following chains:',
+    'ar.list': '<li>Beef cattle</li><li>Rain-fed agriculture</li><li>Forestry</li><li>Other meat chains</li><li>Fruit growing</li><li>Agricultural inputs</li>',
+    'ar.p3': 'Sector development plans prepared at the request of multilateral organizations and Latin American governments.',
+    'ct.h': 'Let’s talk about the future of your organization.',
+    'ft': '© 2026 · Agribusiness strategy',
+    'cl.h': 'Client access', 'cl.close': 'Close', 'cl.user': 'Username', 'cl.pass': 'Password', 'cl.go': 'Sign in',
+    'cl.forgot': 'Forgot your password?', 'cl.restr': 'Restricted access',
+    'cl.empty': 'Enter your username and password.', 'cl.verif': 'Verifying',
+    'cl.fail': 'We couldn’t validate your credentials. If you are an Estratego client and need access, write to us at <a href="mailto:info@estratego.uy" style="color:#F1EEE6">info@estratego.uy</a>.',
+    'meta.title': 'Estratego — Agribusiness strategy',
+    'meta.desc': 'Strategy and management applied to agribusiness. Strategic management of companies and value chains: advisory, management and investment projects.',
+    'lang.switch': 'Ver en español'
+  };
+  var ES = {
+    'cl.empty': 'Ingresá tu usuario y contraseña.', 'cl.verif': 'Verificando', 'cl.go': 'Ingresar',
+    'cl.fail': 'No pudimos validar tus credenciales. Si sos cliente de Estratego y necesitás acceso, escribinos a <a href="mailto:info@estratego.uy" style="color:#F1EEE6">info@estratego.uy</a>.',
+    'meta.title': document.title,
+    'meta.desc': (document.querySelector('meta[name="description"]') || {}).content || '',
+    'lang.switch': 'Read in English'
+  };
+  // guardar los textos originales (español) del documento
+  function grab(attr, prop) {
+    document.querySelectorAll('[' + attr + ']').forEach(function (el) {
+      var k = el.getAttribute(attr);
+      if (!(k in ES)) ES[k] = prop === 'aria' ? el.getAttribute('aria-label') : prop === 'ard' ? el.getAttribute('aria-roledescription') : el[prop];
+    });
+  }
+  grab('data-i18n-html', 'innerHTML'); grab('data-i18n', 'textContent'); grab('data-i18n-aria', 'aria'); grab('data-i18n-ard', 'ard');
+  var cur = 'es';
+  window.T = function (k) { var d = cur === 'en' ? EN : ES; return k in d ? d[k] : (ES[k] || k); };
+  function apply(lang) {
+    cur = lang === 'en' ? 'en' : 'es';
+    document.documentElement.lang = cur;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = T(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) { el.innerHTML = T(el.getAttribute('data-i18n-html')); });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', T(el.getAttribute('data-i18n-aria'))); });
+    document.querySelectorAll('[data-i18n-ard]').forEach(function (el) { el.setAttribute('aria-roledescription', T(el.getAttribute('data-i18n-ard'))); });
+    document.title = T('meta.title');
+    var md = document.querySelector('meta[name="description"]'); if (md) md.content = T('meta.desc');
+    var b = document.getElementById('lang-toggle');
+    if (b) { b.setAttribute('aria-label', T('lang.switch')); b.setAttribute('lang', cur === 'en' ? 'es' : 'en'); }
+    var msg = document.getElementById('cli-msg'); if (msg) msg.textContent = '';
+    try { localStorage.setItem('estratego-lang', cur); } catch (e) {}
+  }
+  var start = 'es';
+  var q = (location.search.match(/[?&]lang=(en|es)/) || [])[1];
+  if (q) start = q; else { try { start = localStorage.getItem('estratego-lang') || 'es'; } catch (e) {} }
+  if (start === 'en') apply('en');
+  var btn = document.getElementById('lang-toggle');
+  if (btn) btn.addEventListener('click', function () { apply(cur === 'en' ? 'es' : 'en'); });
 })();
 </script>
 </body>
