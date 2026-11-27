@@ -165,15 +165,15 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 .sv-head > :last-child{grid-column:2 / span 3}
 @media (max-width:1100px){.sv-head{grid-template-columns:minmax(0,1fr);gap:24px}.sv-head > :last-child{grid-column:auto}}
 /* ---- Servicios ---- */
-.sv-list{list-style:none;margin:clamp(56px,7vw,96px) 0 0;padding:0;border-bottom:1px solid #262D28}
+.sv-list{list-style:none;margin:clamp(40px,5vw,72px) 0 0;padding:0;border-bottom:1px solid #262D28}
 .sv-item{border-top:1px solid #262D28}
 .sv-h{margin:0;font:inherit}
-.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3.4fr) minmax(140px,1fr) 28px;align-items:center;gap:clamp(16px,3vw,48px);padding:clamp(26px,3vw,40px) 0;color:#F1EEE6}
+.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3.4fr) minmax(140px,1fr) 28px;align-items:center;gap:clamp(16px,3vw,48px);padding:clamp(20px,2.2vw,30px) 0;color:#F1EEE6}
 .sv-btn:focus-visible{outline:1px solid #C9A55C;outline-offset:6px}
 .sv-k{display:flex;align-items:baseline;gap:12px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6E756F;transition:color .5s}
 .sv-num{font-family:'Newsreader',Georgia,serif;font-size:16px;letter-spacing:0;color:#C9A55C}
-.sv-q{font-weight:300;font-size:clamp(24px,2.5vw,38px);line-height:1.15;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.2,.7,.2,1),color .5s}
-.sv-name{justify-self:end;text-align:right;font-size:14px;color:#9DA49D;transition:color .5s}
+.sv-q{font-weight:300;font-size:clamp(19px,1.7vw,26px);line-height:1.25;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.2,.7,.2,1),color .5s}
+.sv-name{justify-self:end;text-align:right;font-size:13px;color:#9DA49D;transition:color .5s}
 .sv-ic{position:relative;width:16px;height:16px;justify-self:end}
 .sv-ic::before,.sv-ic::after{content:"";position:absolute;left:0;top:50%;width:16px;height:1px;background:#C9A55C;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .sv-ic::after{transform:rotate(90deg)}
@@ -189,19 +189,19 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 .sv-p.open .sv-grid{opacity:1;transform:none;transition-delay:.15s}
 .sv-lbl{margin:0 0 12px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6E756F}
 .sv-lbl.gold{color:#C9A55C}
-.sv-t{margin:0;font-size:16px;line-height:1.6;color:#B7BBB3}
+.sv-t{margin:0;font-size:15px;line-height:1.6;color:#B7BBB3}
 .sv-ul{margin:0;padding:0;list-style:none}
-.sv-ul li{font-size:16px;line-height:1.55;color:#D9D6CE;padding:10px 0;border-top:1px solid #262D28}
+.sv-ul li{font-size:15px;line-height:1.55;color:#D9D6CE;padding:10px 0;border-top:1px solid #262D28}
 .sv-ul li:first-child{border-top:0;padding-top:0}
 .sv-box{padding-left:clamp(16px,2vw,28px);border-left:1px solid #C9A55C}
-.sv-bn{margin:0 0 8px;font-weight:400;font-size:22px;line-height:1.2;color:#F1EEE6}
-.hw{margin-top:clamp(110px,13vw,190px)}
+.sv-bn{margin:0 0 8px;font-weight:400;font-size:19px;line-height:1.2;color:#F1EEE6}
+.hw{margin-top:clamp(80px,9vw,140px)}
 .hw-steps{list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
 .hw-step{padding-top:28px;border-top:1px solid #262D28}
-.hw-num{display:block;font-weight:300;font-size:clamp(56px,6vw,88px);line-height:.9;color:#C9A55C}
-.hw-n{margin:28px 0 8px;font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.15}
+.hw-num{display:block;font-weight:300;font-size:clamp(40px,3.6vw,56px);line-height:.9;color:#C9A55C}
+.hw-n{margin:20px 0 8px;font-weight:400;font-size:clamp(20px,1.7vw,24px);line-height:1.15}
 .hw-s{margin:0 0 16px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C9A55C}
-.hw-t{margin:0;font-size:16px;line-height:1.6;color:#B7BBB3;max-width:34ch}
+.hw-t{margin:0;font-size:15px;line-height:1.6;color:#B7BBB3;max-width:34ch}
 @media (max-width:1100px){
   .sv-btn{grid-template-columns:minmax(0,1fr) 28px;gap:10px 24px}
   .sv-k{grid-column:1}
@@ -217,7 +217,7 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
   .hw-n{margin-top:18px}
   .nav-sv{display:none}
 }
-@media (max-width:560px){.sv-q{font-size:24px}.sv-btn:hover .sv-q{transform:none}}
+@media (max-width:560px){.sv-q{font-size:20px}.sv-btn:hover .sv-q{transform:none}}
 </style>
 </head>
 <body>
@@ -308,7 +308,7 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 <div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(110px, 13vw, 190px);">
 <div class="sv-head">
 <p class="label" style="margin: 0; color: #C9A55C;" data-i18n="nav.services">Servicios</p>
-<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;" data-i18n="sv.title">Qué preguntas respondemos</h2>
+<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(34px, 3.8vw, 58px); line-height: 1.05; letter-spacing: -.025em;" data-i18n="sv.title">Qué preguntas respondemos</h2>
 </div>
 <ol class="sv-list">
 <li class="sv-item">
@@ -390,7 +390,7 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 <div class="hw">
 <div class="sv-head">
 <p class="label" style="margin: 0; color: #C9A55C;" data-i18n="hw.label">Cómo trabajamos</p>
-<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(34px, 4.2vw, 64px); line-height: 1.05; letter-spacing: -.025em;" data-i18n="hw.title">De la pregunta a la decisión, en tres pasos</h3>
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(28px, 2.8vw, 42px); line-height: 1.1; letter-spacing: -.02em;" data-i18n="hw.title">De la pregunta a la decisión, en tres pasos</h3>
 </div>
 <ol class="hw-steps">
 <li class="hw-step"><span class="hw-num serif">1</span><h4 class="hw-n serif" data-i18n="hw1.n">Diagnóstico</h4><p class="hw-s" data-i18n="hw1.s">2 a 3 semanas</p><p class="hw-t" data-i18n="hw1.t">Una foto clara del problema, del valor en juego y de las opciones disponibles.</p></li>
