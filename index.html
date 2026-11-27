@@ -160,6 +160,64 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
   header .wrap > a:first-child{letter-spacing:.16em !important;font-size:13px !important}
   .navlink{font-size:13px}
 }
+
+.sv-head{display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3.4fr) minmax(140px,1fr) 28px;gap:clamp(16px,3vw,48px);align-items:baseline}
+.sv-head > :last-child{grid-column:2 / span 3}
+@media (max-width:1100px){.sv-head{grid-template-columns:minmax(0,1fr);gap:24px}.sv-head > :last-child{grid-column:auto}}
+/* ---- Servicios ---- */
+.sv-list{list-style:none;margin:clamp(56px,7vw,96px) 0 0;padding:0;border-bottom:1px solid #262D28}
+.sv-item{border-top:1px solid #262D28}
+.sv-h{margin:0;font:inherit}
+.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,3.4fr) minmax(140px,1fr) 28px;align-items:center;gap:clamp(16px,3vw,48px);padding:clamp(26px,3vw,40px) 0;color:#F1EEE6}
+.sv-btn:focus-visible{outline:1px solid #C9A55C;outline-offset:6px}
+.sv-k{display:flex;align-items:baseline;gap:12px;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6E756F;transition:color .5s}
+.sv-num{font-family:'Newsreader',Georgia,serif;font-size:16px;letter-spacing:0;color:#C9A55C}
+.sv-q{font-weight:300;font-size:clamp(24px,2.5vw,38px);line-height:1.15;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.2,.7,.2,1),color .5s}
+.sv-name{justify-self:end;text-align:right;font-size:14px;color:#9DA49D;transition:color .5s}
+.sv-ic{position:relative;width:16px;height:16px;justify-self:end}
+.sv-ic::before,.sv-ic::after{content:"";position:absolute;left:0;top:50%;width:16px;height:1px;background:#C9A55C;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.sv-ic::after{transform:rotate(90deg)}
+.sv-btn:hover .sv-q{transform:translateX(10px)}
+.sv-btn:hover .sv-k,.sv-btn[aria-expanded="true"] .sv-k{color:#F1EEE6}
+.sv-btn:hover .sv-name,.sv-btn[aria-expanded="true"] .sv-name{color:#F1EEE6}
+.sv-btn[aria-expanded="true"] .sv-ic::after{transform:rotate(0deg)}
+.sv-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s cubic-bezier(.2,.7,.2,1)}
+.sv-p.open{grid-template-rows:1fr}
+.sv-pi{overflow:hidden;min-height:0}
+.sv-grid{display:grid;grid-template-columns:minmax(150px,1fr) minmax(0,1.6fr) minmax(0,1.8fr) minmax(0,1.6fr);gap:clamp(16px,3vw,48px);padding:0 0 clamp(36px,4vw,56px);opacity:0;transform:translateY(10px);transition:opacity .5s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.sv-grid > div:first-child{grid-column:2}
+.sv-p.open .sv-grid{opacity:1;transform:none;transition-delay:.15s}
+.sv-lbl{margin:0 0 12px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6E756F}
+.sv-lbl.gold{color:#C9A55C}
+.sv-t{margin:0;font-size:16px;line-height:1.6;color:#B7BBB3}
+.sv-ul{margin:0;padding:0;list-style:none}
+.sv-ul li{font-size:16px;line-height:1.55;color:#D9D6CE;padding:10px 0;border-top:1px solid #262D28}
+.sv-ul li:first-child{border-top:0;padding-top:0}
+.sv-box{padding-left:clamp(16px,2vw,28px);border-left:1px solid #C9A55C}
+.sv-bn{margin:0 0 8px;font-weight:400;font-size:22px;line-height:1.2;color:#F1EEE6}
+.hw{margin-top:clamp(110px,13vw,190px)}
+.hw-steps{list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
+.hw-step{padding-top:28px;border-top:1px solid #262D28}
+.hw-num{display:block;font-weight:300;font-size:clamp(56px,6vw,88px);line-height:.9;color:#C9A55C}
+.hw-n{margin:28px 0 8px;font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.15}
+.hw-s{margin:0 0 16px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C9A55C}
+.hw-t{margin:0;font-size:16px;line-height:1.6;color:#B7BBB3;max-width:34ch}
+@media (max-width:1100px){
+  .sv-btn{grid-template-columns:minmax(0,1fr) 28px;gap:10px 24px}
+  .sv-k{grid-column:1}
+  .sv-q{grid-column:1;grid-row:2}
+  .sv-name{grid-column:1;grid-row:3;justify-self:start;text-align:left}
+  .sv-ic{grid-column:2;grid-row:1 / span 3;align-self:center}
+  .sv-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)}
+  .sv-grid > div:first-child{grid-column:auto}
+}
+@media (max-width:900px){
+  .sv-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .hw-steps{grid-template-columns:minmax(0,1fr);gap:40px}
+  .hw-n{margin-top:18px}
+  .nav-sv{display:none}
+}
+@media (max-width:560px){.sv-q{font-size:24px}.sv-btn:hover .sv-q{transform:none}}
 </style>
 </head>
 <body>
@@ -171,6 +229,7 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 <a href="#inicio" style="text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .5em;">ESTRATEGO</a>
 <nav aria-label="Principal" data-i18n-aria="aria.nav" style="display: flex; gap: clamp(20px, 3vw, 40px);">
 <a class="navlink" href="#areas" data-i18n="nav.areas">Áreas</a>
+<a class="navlink nav-sv" href="#servicios" data-i18n="nav.services">Servicios</a>
 <a class="navlink" href="#contacto" data-i18n="nav.contact">Contacto</a>
 <button type="button" class="lang-btn" id="lang-toggle" aria-label="Read in English" lang="en"><span data-l="es">ES</span><span class="lang-sep" aria-hidden="true">/</span><span data-l="en">EN</span></button>
 <button type="button" class="clientes-btn" id="open-clientes" aria-haspopup="dialog" aria-label="Clientes" data-i18n-aria="nav.clients"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span class="cli-lbl" data-i18n="nav.clients">Clientes</span></button>
@@ -240,6 +299,104 @@ html[lang="es"] .lang-btn:hover [data-l="es"],html[lang="en"] .lang-btn:hover [d
 <p style="margin: 32px 0 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.55; color: #B7BBB3; max-width: 36ch;" data-i18n="ar.p3">Elaboración de planes de desarrollo sectoriales a solicitud de organismos multilaterales y gobiernos de América Latina.</p>
 </div>
 </div>
+</div>
+</div>
+</section>
+
+<!-- SERVICIOS: lista de preguntas que se abren + cómo trabajamos -->
+<section id="servicios" aria-label="Servicios" data-i18n-aria="nav.services" style="background: #0B0F0C; border-top: 1px solid #1A201C;">
+<div class="wrap" style="padding-top: clamp(110px, 13vw, 190px); padding-bottom: clamp(110px, 13vw, 190px);">
+<div class="sv-head">
+<p class="label" style="margin: 0; color: #C9A55C;" data-i18n="nav.services">Servicios</p>
+<h2 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.03em;" data-i18n="sv.title">Qué preguntas respondemos</h2>
+</div>
+<ol class="sv-list">
+<li class="sv-item">
+<h3 class="sv-h"><button type="button" class="sv-btn" id="sv-b1" aria-expanded="false" aria-controls="sv-p1">
+<span class="sv-k"><span class="sv-num">01</span><span class="sv-verb" data-i18n="sv1.v">Invertir</span></span>
+<span class="sv-q serif" data-i18n="sv1.q">¿Cómo, cuánto, dónde y por qué invertir en el agro de América Latina?</span>
+<span class="sv-name" data-i18n="sv1.n">Capital Global Agro</span>
+<span class="sv-ic" aria-hidden="true"></span>
+</button></h3>
+<div class="sv-p" id="sv-p1" role="region" aria-labelledby="sv-b1" hidden>
+<div class="sv-pi"><div class="sv-grid">
+<div><p class="sv-lbl" data-i18n="sv.for">Para quién</p><p class="sv-t" data-i18n="sv1.w">Multinacionales, fondos de tierras e inversión, family offices y empresas que buscan invertir en la región.</p></div>
+<div><p class="sv-lbl" data-i18n="sv.solve">Qué resolvemos</p><ul class="sv-ul" data-i18n-html="sv1.b"><li>Asignación de capital por país y por activo: tierra, originación, logística e industria.</li><li>Estrategia de entrada: due diligence, valuación y estructura de la inversión.</li><li>Riesgo país, regulatorio y geopolítico, incluido el impacto de los regímenes de incentivo.</li></ul></div>
+<div class="sv-box"><p class="sv-lbl gold" data-i18n="sv1.sk">Servicio continuo</p><p class="sv-bn serif" data-i18n="sv1.sn">Radar País</p><p class="sv-t" data-i18n="sv1.st">Informe trimestral de riesgo país, regulatorio y geopolítico de América Latina.</p></div>
+</div></div>
+</div>
+</li>
+<li class="sv-item">
+<h3 class="sv-h"><button type="button" class="sv-btn" id="sv-b2" aria-expanded="false" aria-controls="sv-p2">
+<span class="sv-k"><span class="sv-num">02</span><span class="sv-verb" data-i18n="sv2.v">Crecer</span></span>
+<span class="sv-q serif" data-i18n="sv2.q">¿Dónde, cómo y con qué capital crecemos?</span>
+<span class="sv-name" data-i18n="sv2.n">Mapa de Crecimiento</span>
+<span class="sv-ic" aria-hidden="true"></span>
+</button></h3>
+<div class="sv-p" id="sv-p2" role="region" aria-labelledby="sv-b2" hidden>
+<div class="sv-pi"><div class="sv-grid">
+<div><p class="sv-lbl" data-i18n="sv.for">Para quién</p><p class="sv-t" data-i18n="sv2.w">Empresas agropecuarias y agroindustriales medianas y grandes que buscan crecer y mejorar su negocio.</p></div>
+<div><p class="sv-lbl" data-i18n="sv.solve">Qué resolvemos</p><ul class="sv-ul" data-i18n-html="sv2.b"><li>Oportunidades de expansión: nuevas zonas, integración vertical y nuevos mercados.</li><li>Evaluación de proyectos y compras: industria, riego, almacenamiento y logística, con due diligence y valuación.</li><li>Estructura de capital y financiamiento: bancos, bolsa local, fondos y multilaterales.</li></ul></div>
+<div class="sv-box"><p class="sv-lbl gold" data-i18n="sv2.sk">Servicio</p><p class="sv-bn serif" data-i18n="sv2.sn">Hoja de ruta de crecimiento</p><p class="sv-t" data-i18n="sv2.st">Oportunidades evaluadas, plan de financiamiento y presentación a inversores.</p></div>
+</div></div>
+</div>
+</li>
+<li class="sv-item">
+<h3 class="sv-h"><button type="button" class="sv-btn" id="sv-b3" aria-expanded="false" aria-controls="sv-p3">
+<span class="sv-k"><span class="sv-num">03</span><span class="sv-verb" data-i18n="sv3.v">Proteger</span></span>
+<span class="sv-q serif" data-i18n="sv3.q">¿Cómo protegemos los resultados de la empresa?</span>
+<span class="sv-name" data-i18n="sv3.n">Protección de Riesgos</span>
+<span class="sv-ic" aria-hidden="true"></span>
+</button></h3>
+<div class="sv-p" id="sv-p3" role="region" aria-labelledby="sv-b3" hidden>
+<div class="sv-pi"><div class="sv-grid">
+<div><p class="sv-lbl" data-i18n="sv.for">Para quién</p><p class="sv-t" data-i18n="sv3.w">Productores, acopiadores, frigoríficos, agroindustrias y grupos familiares expuestos a múltiples riesgos.</p></div>
+<div><p class="sv-lbl" data-i18n="sv.solve">Qué resolvemos</p><ul class="sv-ul" data-i18n-html="sv3.b"><li>Mapa de exposiciones: precio de granos y ganado, tipo de cambio, clima, logística y contrapartes.</li><li>Política de coberturas: qué cubrir, cuánto, cuándo y con qué instrumento (futuros, opciones, forwards y seguros agrícolas).</li><li>Margen en riesgo: simulación de escenarios de precio, cosecha y dólar.</li></ul></div>
+<div class="sv-box"><p class="sv-lbl gold" data-i18n="sv3.sk">Servicio continuo</p><p class="sv-bn serif" data-i18n="sv3.sn">Comité de Riesgos</p><p class="sv-t" data-i18n="sv3.st">Reunión mensual con tablero de exposiciones, coberturas y margen en riesgo.</p></div>
+</div></div>
+</div>
+</li>
+<li class="sv-item">
+<h3 class="sv-h"><button type="button" class="sv-btn" id="sv-b4" aria-expanded="false" aria-controls="sv-p4">
+<span class="sv-k"><span class="sv-num">04</span><span class="sv-verb" data-i18n="sv4.v">Trascender</span></span>
+<span class="sv-q serif" data-i18n="sv4.q">¿Cómo preparamos la empresa para la próxima generación?</span>
+<span class="sv-name" data-i18n="sv4.n">Legado</span>
+<span class="sv-ic" aria-hidden="true"></span>
+</button></h3>
+<div class="sv-p" id="sv-p4" role="region" aria-labelledby="sv-b4" hidden>
+<div class="sv-pi"><div class="sv-grid">
+<div><p class="sv-lbl" data-i18n="sv.for">Para quién</p><p class="sv-t" data-i18n="sv4.w">Grupos familiares del agro y la agroindustria, sus directorios y la próxima generación.</p></div>
+<div><p class="sv-lbl" data-i18n="sv.solve">Qué resolvemos</p><ul class="sv-ul" data-i18n-html="sv4.b"><li>Rentabilidad, riesgo y liquidez del grupo: en el agro suele sobrar tierra y faltar caja.</li><li>Sucesión, protocolo familiar y gobierno corporativo, junto con abogados aliados.</li><li>Separación del patrimonio familiar y empresarial, y política de dividendos.</li></ul></div>
+<div class="sv-box"><p class="sv-lbl gold" data-i18n="sv4.sk">Servicio continuo</p><p class="sv-bn serif" data-i18n="sv4.sn">Acompañamiento al directorio</p><p class="sv-t" data-i18n="sv4.st">Reunión mensual con tablero de rentabilidad, riesgo y liquidez del grupo.</p></div>
+</div></div>
+</div>
+</li>
+<li class="sv-item">
+<h3 class="sv-h"><button type="button" class="sv-btn" id="sv-b5" aria-expanded="false" aria-controls="sv-p5">
+<span class="sv-k"><span class="sv-num">05</span><span class="sv-verb" data-i18n="sv5.v">Controlar</span></span>
+<span class="sv-q serif" data-i18n="sv5.q">¿Sabemos a tiempo si el plan se está cumpliendo?</span>
+<span class="sv-name" data-i18n="sv5.n">Torre de Control</span>
+<span class="sv-ic" aria-hidden="true"></span>
+</button></h3>
+<div class="sv-p" id="sv-p5" role="region" aria-labelledby="sv-b5" hidden>
+<div class="sv-pi"><div class="sv-grid">
+<div><p class="sv-lbl" data-i18n="sv.for">Para quién</p><p class="sv-t" data-i18n="sv5.w">Empresas y grupos del agro que quieren decidir mejor y más rápido.</p></div>
+<div><p class="sv-lbl" data-i18n="sv.solve">Qué resolvemos</p><ul class="sv-ul" data-i18n-html="sv5.b"><li>Diagnóstico de datos: qué decisiones vale la pena medir y modelar.</li><li>Tableros de control: presupuesto contra real, márgenes, precios, clima y riesgos en un solo lugar.</li><li>Agentes de IA que alertan desvíos, simulan escenarios y proponen alternativas.</li></ul></div>
+<div class="sv-box"><p class="sv-lbl gold" data-i18n="sv5.sk">Servicio continuo</p><p class="sv-bn serif" data-i18n="sv5.sn">Suscripción a la Torre</p><p class="sv-t" data-i18n="sv5.st">Mantenimiento, mejoras y lectura económica mensual de los resultados.</p></div>
+</div></div>
+</div>
+</li>
+</ol>
+<div class="hw">
+<div class="sv-head">
+<p class="label" style="margin: 0; color: #C9A55C;" data-i18n="hw.label">Cómo trabajamos</p>
+<h3 class="serif" style="margin: 0; font-weight: 300; font-size: clamp(34px, 4.2vw, 64px); line-height: 1.05; letter-spacing: -.025em;" data-i18n="hw.title">De la pregunta a la decisión, en tres pasos</h3>
+</div>
+<ol class="hw-steps">
+<li class="hw-step"><span class="hw-num serif">1</span><h4 class="hw-n serif" data-i18n="hw1.n">Diagnóstico</h4><p class="hw-s" data-i18n="hw1.s">2 a 3 semanas</p><p class="hw-t" data-i18n="hw1.t">Una foto clara del problema, del valor en juego y de las opciones disponibles.</p></li>
+<li class="hw-step"><span class="hw-num serif">2</span><h4 class="hw-n serif" data-i18n="hw2.n">Proyecto</h4><p class="hw-s" data-i18n="hw2.s">Alcance y plazo a medida</p><p class="hw-t" data-i18n="hw2.t">Modelo económico, recomendación cuantificada y hoja de ruta.</p></li>
+<li class="hw-step"><span class="hw-num serif">3</span><h4 class="hw-n serif" data-i18n="hw3.n">Acompañamiento</h4><p class="hw-s" data-i18n="hw3.s">Servicio recurrente</p><p class="hw-t" data-i18n="hw3.t">Seguimos la decisión en el tiempo: radar, comité de riesgos, tableros y directorio.</p></li>
+</ol>
 </div>
 </div>
 </section>
@@ -776,7 +933,80 @@ class Component extends DCLogic {
 </script>
 <script>
 (function () {
+  var btns = [].slice.call(document.querySelectorAll('.sv-btn'));
+  function set(b, open) {
+    var p = document.getElementById(b.getAttribute('aria-controls'));
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) { p.hidden = false; requestAnimationFrame(function () { requestAnimationFrame(function () { p.classList.add('open'); }); }); }
+    else { p.classList.remove('open'); clearTimeout(p._t); p._t = setTimeout(function () { if (!p.classList.contains('open')) p.hidden = true; }, 700); }
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      btns.forEach(function (o) { if (o !== b && o.getAttribute('aria-expanded') === 'true') set(o, false); });
+      set(b, open);
+    });
+  });
+})();
+</script>
+<script>
+(function () {
   var EN = {
+    "nav.services": "Services",
+    "sv.title": "The questions we answer",
+    "sv.for": "For",
+    "sv.solve": "What we solve",
+    "hw.label": "How we work",
+    "hw.title": "From question to decision, in three steps",
+    "sv1.v": "Invest",
+    "sv1.n": "Global Agri Capital",
+    "sv1.q": "How, how much, where and why to invest in Latin American agribusiness?",
+    "sv1.w": "Multinationals, land and investment funds, family offices and companies looking to invest in the region.",
+    "sv1.sk": "Ongoing service",
+    "sv1.sn": "Country Radar",
+    "sv1.st": "Quarterly report on country, regulatory and geopolitical risk in Latin America.",
+    "sv1.b": "<li>Capital allocation by country and asset: land, origination, logistics and industry.</li><li>Entry strategy: due diligence, valuation and deal structure.</li><li>Country, regulatory and geopolitical risk, including the impact of incentive regimes.</li>",
+    "sv2.v": "Grow",
+    "sv2.n": "Growth Map",
+    "sv2.q": "Where, how and with what capital do we grow?",
+    "sv2.w": "Mid-sized and large agricultural and agro-industrial companies looking to grow and improve their business.",
+    "sv2.sk": "Service",
+    "sv2.sn": "Growth roadmap",
+    "sv2.st": "Assessed opportunities, a financing plan and an investor presentation.",
+    "sv2.b": "<li>Expansion opportunities: new regions, vertical integration and new markets.</li><li>Assessment of projects and acquisitions: processing, irrigation, storage and logistics, with due diligence and valuation.</li><li>Capital structure and financing: banks, the local stock exchange, funds and multilaterals.</li>",
+    "sv3.v": "Protect",
+    "sv3.n": "Risk Protection",
+    "sv3.q": "How do we protect the company’s results?",
+    "sv3.w": "Producers, grain merchants, meatpackers, agro-industries and family groups exposed to multiple risks.",
+    "sv3.sk": "Ongoing service",
+    "sv3.sn": "Risk Committee",
+    "sv3.st": "Monthly meeting with a dashboard of exposures, hedges and margin at risk.",
+    "sv3.b": "<li>Exposure map: grain and cattle prices, exchange rates, weather, logistics and counterparties.</li><li>Hedging policy: what to hedge, how much, when and with which instrument (futures, options, forwards and crop insurance).</li><li>Margin at risk: price, harvest and dollar scenario simulations.</li>",
+    "sv4.v": "Endure",
+    "sv4.n": "Business Family Office",
+    "sv4.q": "How do we prepare the company for the next generation?",
+    "sv4.w": "Family groups in agribusiness and agro-industry, their boards and the next generation.",
+    "sv4.sk": "Ongoing service",
+    "sv4.sn": "Board support",
+    "sv4.st": "Monthly meeting with a dashboard of the group’s profitability, risk and liquidity.",
+    "sv4.b": "<li>The group’s profitability, risk and liquidity: in agriculture there is often plenty of land and too little cash.</li><li>Succession, family protocol and corporate governance, together with partner law firms.</li><li>Separation of family and business assets, and dividend policy.</li>",
+    "sv5.v": "Control",
+    "sv5.n": "Decision Intelligence",
+    "sv5.q": "Do we know in time whether the plan is on track?",
+    "sv5.w": "Agribusiness companies and groups that want to decide better and faster.",
+    "sv5.sk": "Ongoing service",
+    "sv5.sn": "Control Tower subscription",
+    "sv5.st": "Maintenance, improvements and a monthly economic reading of results.",
+    "sv5.b": "<li>Data diagnosis: which decisions are worth measuring and modeling.</li><li>Control dashboards: budget vs. actual, margins, prices, weather and risks in one place.</li><li>AI agents that flag deviations, simulate scenarios and propose alternatives.</li>",
+    "hw1.n": "Diagnosis",
+    "hw1.s": "2 to 3 weeks",
+    "hw1.t": "A clear picture of the problem, the value at stake and the options available.",
+    "hw2.n": "Project",
+    "hw2.s": "Tailored scope and timeline",
+    "hw2.t": "Economic model, quantified recommendation and roadmap.",
+    "hw3.n": "Ongoing support",
+    "hw3.s": "Recurring service",
+    "hw3.t": "We follow the decision over time: radar, risk committee, dashboards and board.",
     'nav.areas': 'Areas', 'nav.contact': 'Contact', 'nav.clients': 'Clients',
     'aria.nav': 'Main', 'aria.hero': 'Strategy, information and decision', 'aria.carousel': 'carousel', 'aria.steps': 'Stages',
     'h.t1': 'Agribusiness strategy', 'h.s1': 'Strategic management of companies and value chains',
